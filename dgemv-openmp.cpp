@@ -25,7 +25,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
    for (int i = 0; i < n; i++) { //loop n times, once for each row/element in final vector
       double temp = 0.0; //initialize our temp value used to calculate final vector elements
 
-      #pragma omp for
+      //#pragma omp for
       for (int j = 0; j < n; j++) { // loop n times, because n columns for each row
          //i * n is all elements in all previous rows (row offset)
          //j is what column within that row
