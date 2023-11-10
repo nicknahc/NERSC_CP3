@@ -13,7 +13,7 @@ const char* dgemv_desc = "OpenMP dgemv.";
  */
 
 void my_dgemv(int n, double* A, double* x, double* y) {
-
+   /*
    #pragma omp parallel
    {
       int nthreads = omp_get_num_threads();
@@ -21,6 +21,7 @@ void my_dgemv(int n, double* A, double* x, double* y) {
       printf("my_dgemv(): Hello world: thread %d of %d checking in. \n", thread_id, nthreads);
       printf("my_dgemv(): For actual timing runs, please comment out these printf() and omp_get_*() statements. \n");
    }
+   */
    #pragma omp parallel for
    for (int i = 0; i < n; i++) { //loop n times, once for each row/element in final vector
       double temp = 0.0; //initialize our temp value used to calculate final vector elements
